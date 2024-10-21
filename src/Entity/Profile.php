@@ -15,10 +15,10 @@ class Profile
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $Bio = null;
+    private ?string $bio = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $adress = null;
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $address = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthday = null;
@@ -30,24 +30,24 @@ class Profile
 
     public function getBio(): ?string
     {
-        return $this->Bio;
+        return $this->bio;
     }
 
-    public function setBio(?string $Bio): static
+    public function setBio(?string $bio): static
     {
-        $this->Bio = $Bio;
+        $this->bio = $bio;
 
         return $this;
     }
 
-    public function getAdress(): ?string
+    public function getAddress(): ?string
     {
-        return $this->adress;
+        return $this->address;
     }
 
-    public function setAdress(?string $adress): static
+    public function setAddress(?string $address): static
     {
-        $this->adress = $adress;
+        $this->address = $address;
 
         return $this;
     }
